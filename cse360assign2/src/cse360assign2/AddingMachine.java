@@ -1,20 +1,25 @@
 package cse360assign2;
 
+/**
+ * @author Luis Torres
+ * ltorresg
+ * Assignment 2
+ *
+ * The AddingMachine class contains methods to add and subtract a value from the total value,<br>
+ * a method to print the transaction history, and a method to clear the total and history. 
+ */
+
 public class AddingMachine {
 	
-	/**
-	 * @author Luis Torres
-	 * ltorresg
-	 * Assignment 2
-	 */
-
 	private int total;
+	private String history;
 	
 	/**
-	 * Creates a new instance of the AddingMachine class.
+	 * Creates a new instance of the AddingMachine class. 
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/**
@@ -23,37 +28,45 @@ public class AddingMachine {
 	 * @return integer representation of the total value
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
-	 * Adds a value to the total.
+	 * Adds a value to the total and adds transaction to history.
 	 * 
 	 * @param value integer value to be added to the total.
 	 */
 	public void add (int value) {
-		
+		history += " + " + value;
+		total += value;
 	}
 	
 	/**
-	 * Subtracts a value from the total.
+	 * Subtracts a value from the total and adds transaction to history.
 	 * 
 	 * @param value integer value to be subtracted from the total.
 	 */
 	public void subtract (int value) {
-		
+		history += " - " + value;
+		total -= value;
 	}
 	
 	/**
-	 * Returns a string of the transactional history.
+	 * Returns a string of the transaction history.
 	 * 
 	 * @return string representation of the summary of the transactions performed.
 	 */
 	public String toString () {
-		return "";
+		return history;
 	}
 
+	/**
+	 * Clears the total value and history.
+	 */
 	public void clear() {
-	
+		total = 0;
+		history = "0";
 	}
 }
+
+
